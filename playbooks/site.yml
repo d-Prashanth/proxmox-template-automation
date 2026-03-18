@@ -4,4 +4,4 @@
   become: yes
 
   roles:
-    - proxmox_template_role
+    - roles
