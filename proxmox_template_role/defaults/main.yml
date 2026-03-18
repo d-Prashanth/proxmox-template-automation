@@ -1,0 +1,16 @@
+# defaults file for proxmox_template
+
+---
+ubuntu_templates:
+  - vm_id: 9000
+    codename: jammy
+    template_name: ubuntu-22-template
+
+  - vm_id: 9001
+    codename: noble
+    template_name: ubuntu-24-template
+
+storage: local-lvm
+bridge: vmbr0
+memory: 2048
+cores: 2

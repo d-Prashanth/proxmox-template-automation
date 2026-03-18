@@ -1,0 +1,10 @@
+# Ignore SSH keys
+.ssh/*
+!.ssh/README.md
+
+# Ignore passwords
+.HOSTPwd
+
+# Ignore private keys
+*.pem
+*.key

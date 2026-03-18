@@ -1,0 +1,7 @@
+---
+- name: Proxmox Template Automation
+  hosts: all
+  become: yes
+
+  roles:
+    - proxmox_template_role

@@ -1,0 +1,19 @@
+# tasks file for proxmox_template
+---
+- name: Copy template creation script
+  copy:
+    src: create_ubuntu.sh
+    dest: /tmp/create_ubuntu.sh
+    mode: '0755'
+
+- name: Execute template creation script
+  shell: >
+    /tmp/create_ubuntu.sh {{ item.vm_id }} {{ item.codename }} {{ item.template_name }}
+  loop: "{{ ubuntu_templates }}"
+  register: output
+  ignore_errors: yes
+
+- name: Show output
+  debug:
+    var: item.stdout_lines
+  loop: "{{ output.results }}"
